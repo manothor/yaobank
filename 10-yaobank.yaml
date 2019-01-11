@@ -33,8 +33,8 @@ spec:
       serviceAccountName: database
       containers:
       - name: database
-        image: spikecurtis/yaobank-database:latest
-        imagePullPolicy: IfNotPresent
+        image: calico/yaobank-database:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 2379
         command: ["etcd"]
@@ -54,6 +54,7 @@ spec:
   ports:
   - port: 80
     name: http
+    targetPort: 8000
   selector:
     app: summary
 ---
@@ -80,10 +81,10 @@ spec:
       serviceAccountName: summary
       containers:
       - name: summary
-        image: spikecurtis/yaobank-summary:latest
+        image: calico/yaobank-summary:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8000
 ---
 apiVersion: v1
 kind: Service
@@ -95,6 +96,7 @@ spec:
   ports:
   - port: 80
     name: http
+    targetPort: 8000
   selector:
     app: customer
 ---
@@ -121,8 +123,8 @@ spec:
       serviceAccountName: customer
       containers:
       - name: customer
-        image: spikecurtis/yaobank-customer:latest
+        image: calico/yaobank-customer:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8000
 ---
