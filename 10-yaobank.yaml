@@ -51,7 +51,7 @@ spec:
       serviceAccountName: database
       containers:
       - name: database
-        image: calico/yaobank-database:latest
+        image: calico/yaobank-database:certification
         imagePullPolicy: Always
         ports:
         - containerPort: 2379
@@ -108,7 +108,7 @@ spec:
       serviceAccountName: summary
       containers:
       - name: summary
-        image: calico/yaobank-summary:latest
+        image: calico/yaobank-summary:certification
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
@@ -158,7 +158,7 @@ spec:
       serviceAccountName: customer
       containers:
       - name: customer
-        image: calico/yaobank-customer:latest
+        image: calico/yaobank-customer:certification
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
