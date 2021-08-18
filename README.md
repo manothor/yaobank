@@ -9,11 +9,13 @@ Consists of 3 microservices:
 1. **summary** - HTTP service that returns JSON account summaries.
 1. **customer** - Front-end web service that displays account summaries to users.
 
-![service graph](https://github.com/spikecurtis/yaobank/raw/master/doc/service-graph.png)
+![service graph](./doc/service-graph.png)
 
 *User icon By MCruz (WMF) (Own work) [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons*
 
 The transaction and teller microservices are microservices that a bank teller would use to process deposits and withdrawals.  They don't feature in the policy demo directly, so have not been built yet.
+
+![communication description](./doc/yaobank.png)
 
 ## How to run
 
