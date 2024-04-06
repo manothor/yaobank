@@ -1,7 +1,7 @@
 # YAO Bank
 (Yet Another Online Bank)
 
-Demo Application for Kubernetes suitable for showing authorization policy.
+Demo Application for Kubernetes suitable for showing authorization policy in centra
 
 Consists of 3 microservices:
 
